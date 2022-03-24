@@ -1,5 +1,22 @@
 {%extends "base.html" %}{% block title %}Home{%endblock%}
 
 {% block content %}
-<h1>Home </h1>
+<h1 align = "center">PEP</h1>
+<ul class="list-group list-group-flush" id = "peps">
+    {% for search in user.searches %}
+    <li class = "list-group-item">{{ search.name }}
+        <button type="button" class="close" onClick="deleteNote({{ search.id }})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+
+<form method="POST">
+    <textarea name="pep" id="pep" class="form-control"></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class = "btn btn-primary" placeholder="Name of person">Check PEP</button>
+    </div>
+</form>
 {%endblock%}
