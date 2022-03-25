@@ -37,11 +37,8 @@ def home():
         pep = request.form.get('pep')
 
         temp = path.exists('PEP-Check/website/database.db')
-        print(f'Does db exist?: {temp}')
-        print(pep)
 
         if(pep):
-            print('data: ', pep)
             if(len(pep)<1):
                 flash('Name is too short', category='error')
             
@@ -50,7 +47,6 @@ def home():
                 found_pep = PEP.query.filter_by(name=pep).first()
                 if(found_pep):
                     flash('This person is a politically exposed person!', category='error')
-                    print(found_pep)
                     new_search = Log(name=pep, user_id=current_user.id)
                     db.session.add(new_search)
                     db.session.commit()

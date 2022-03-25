@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1 align = "center">PEP</h1>
-<h3> Log of found PEPs</h3>
+<h3>Log of found PEPs</h3>
 <ul class="list-group list-group-flush" id = "peps">
     {% for search in user.searches %}
     <li class = "list-group-item">{{ search.name }}</li>
