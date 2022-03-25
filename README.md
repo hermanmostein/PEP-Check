@@ -1,13 +1,13 @@
 # Stacc code challenge 2021
 
 ## Oppgavebeskrivelse
-Her kan beskrive hvilke oppgave(r) du har valgt å løse.
-> Bekriv prosjektet ditt kort.
+
+> Jeg har brukt csv filen vi fikk utdelt til å lage en database av alle PEPS. Dene databasen brukes til å hente ut personer som er politisk eksponert dersom de søkes på. Jeg har forøvirg lagd en frontend som har en login, logg av PEPs som er søkt på av en bruker, og en søkefunksjon for å sjekke om en person er en PEP. 
 
 ## Hvordan kjøre prosjektet
-For eksempel ***yarn start***
-> Husk å pakke med alle avhengigheter.
+
+> For å kjøpe prosjektet må man kjøre main.py, og bruke linken man får opp i terminalen for å besøke nettsiden. For å bruke søkefunksjonen må man lage en bruker å logge inn med. 
 
 ## Kommentarer
-Noen spesielle valg du ønsker å beskrive/forsvare?
-> Eventuellt andre kommentarer / utfordringer?
+
+> Jeg vil gjerne legge til at mye av prosjektet mitt har blitt lagd med en tutorial i ryggen som kan oppgis hvis ønskelig. 

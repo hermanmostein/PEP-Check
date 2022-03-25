@@ -15,16 +15,22 @@ views = Blueprint('views', __name__)
 @login_required
 def home():
 
-    if(request.method == 'GET'):
-        if not path.exists('PEP-Check/website/database.db'):
+    if not PEP.query.filter_by(name='name').first():
+        file = open('PEP-Check/website/pep.csv')
+        data = csv.reader(file)
 
-            file = open('PEP-Check/website/pep.csv')
-            data = csv.reader(file)
+        print('Inne')
+        test = 0
+        for i in data:
+            if test < 3:
+                print(f'Data nummer 1: {i}')
+            test += 1
 
-            for i in data:
-                person = PEP(name = i[2])
-                db.session.add(person)
+            person = PEP(name = i[2].lower())
+            db.session.add(person)
             db.session.commit()
+        dataimported = False
+        
 
 
     if(request.method == 'POST'):
@@ -40,12 +46,13 @@ def home():
                 flash('Name is too short', category='error')
             
             else:
-                if(PEP.query.filter_by(name=pep)):
+                found_pep = PEP.query.filter_by(name=pep.lower()).first()
+                if(found_pep):
                     flash('This person is a politically exposed person!', category='error')
+                    print(found_pep)
                     new_search = Log(name=pep, user_id=current_user.id)
                     db.session.add(new_search)
                     db.session.commit()
-                    #flash('Note added!', category='success')
                 else:
                     flash('This person is NOT a politically exposed person!', category='success')
 
