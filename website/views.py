@@ -46,7 +46,8 @@ def home():
                 flash('Name is too short', category='error')
             
             else:
-                found_pep = PEP.query.filter_by(name=pep.lower()).first()
+                pep = pep.lower().strip()
+                found_pep = PEP.query.filter_by(name=pep).first()
                 if(found_pep):
                     flash('This person is a politically exposed person!', category='error')
                     print(found_pep)

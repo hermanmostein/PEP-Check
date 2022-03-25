@@ -6,7 +6,7 @@
 
 ## Hvordan kjøre prosjektet
 
-> For å kjøpe prosjektet må man kjøre main.py, og bruke linken man får opp i terminalen for å besøke nettsiden. For å bruke søkefunksjonen må man lage en bruker å logge inn med. 
+> For å kjøpe prosjektet må man kjøre main.py, og bruke linken man får opp i terminalen for å besøke nettsiden. For å bruke søkefunksjonen må man lage en bruker å logge inn med. (Eller bruke stacc@stacc.no med passord staccstacc)
 
 ## Kommentarer
 
